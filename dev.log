@@ -1,0 +1,175 @@
+
+> subscription-crm@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.1.6
+   - Local:        http://localhost:3000
+   - Network:      http://10.188.74.199:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 10.4s
+ ✓ Compiled /src/middleware in 367ms (152 modules)
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1338ms (754 modules)
+ GET /login 200 in 2346ms
+ ○ Compiling /signup ...
+(node:27012) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ Compiled /signup in 12.4s (775 modules)
+ GET /signup 200 in 12546ms
+ GET /login?code=95da96f3-252b-414d-a288-fb457948dc36 200 in 71ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 4.7s (878 modules)
+ GET /dashboard 200 in 7978ms
+ POST /login?code=95da96f3-252b-414d-a288-fb457948dc36 303 in 12576ms
+ GET /dashboard 200 in 448ms
+ ○ Compiling /clients ...
+ ✓ Compiled /clients in 679ms (870 modules)
+ GET /clients 200 in 424ms
+ GET /clients 200 in 3840ms
+ ○ Compiling /clients/new ...
+ ✓ Compiled /clients/new in 762ms (883 modules)
+ GET /clients/new 200 in 965ms
+ ⨯ Error: No workspace for user
+    at getWorkspaceId (src\lib\workspace.ts:18:28)
+    at async createClientRecord (src\app\(app)\clients\actions.ts:30:23)
+  16 |     .single();
+  17 |
+> 18 |   if (error || !data) throw new Error("No workspace for user");
+     |                            ^
+  19 |   return data.workspace_id;
+  20 | }
+  21 | {
+  digest: '4258836759'
+}
+ POST /clients/new 500 in 1433ms
+
+Could not open actions.ts in the editor.
+
+When running on Windows, file names are checked against an access list to protect against remote code execution attacks. File names may consist only of alphanumeric characters (all languages), periods, dashes, slashes, and underscores.
+
+
+Could not open actions.ts in the editor.
+
+When running on Windows, file names are checked against an access list to protect against remote code execution attacks. File names may consist only of alphanumeric characters (all languages), periods, dashes, slashes, and underscores.
+
+ ✓ Compiled in 1180ms (897 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /clients/new 200 in 771ms
+ GET /clients/new 200 in 1039ms
+Error: fetch failed
+    at context.fetch (A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\server\web\sandbox\context.js:303:38)
+    at eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/helpers.js:121:25)
+    at _handleRequest (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:122:24)
+    at _request (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:112:24)
+    at eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2512:82)
+    at SupabaseAuthClient._useSession (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2329:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2502:20)
+    at async eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2486:20)
+    at async eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2274:28) {
+  
+}
+Error: fetch failed
+    at context.fetch (A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\server\web\sandbox\context.js:303:38)
+    at eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/helpers.js:121:25)
+    at _handleRequest (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:122:24)
+    at _request (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:112:24)
+    at eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2512:82)
+    at SupabaseAuthClient._useSession (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2329:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2502:20)
+    at async eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2486:20)
+    at async eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2274:28) {
+  
+}
+{
+  code: 'PGRST205',
+  details: null,
+  hint: null,
+  message: "Could not find the table 'public.profiles' in the schema cache"
+}
+ ⨯ Error: No workspace for user
+    at getWorkspaceId (src\lib\workspace.ts:19:28)
+    at async createClientRecord (src\app\(app)\clients\actions.ts:30:23)
+  17 |
+  18 |   console.log(error)
+> 19 |   if (error || !data) throw new Error("No workspace for user");
+     |                            ^
+  20 |   return data.workspace_id;
+  21 | }
+  22 | {
+  digest: '3537479670'
+}
+ POST /clients/new 500 in 4285ms
+ POST /login 200 in 6722ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 1139ms (893 modules)
+ GET /clients/new 200 in 1289ms
+ ⨯ Error: No workspace for user
+    at getWorkspaceId (src\lib\workspace.ts:18:28)
+    at async createClientRecord (src\app\(app)\clients\actions.ts:30:23)
+  16 |     .single();
+  17 |
+> 18 |   if (error || !data) throw new Error("No workspace for user");
+     |                            ^
+  19 |   return data.workspace_id;
+  20 | }
+  21 | {
+  digest: '4258836759'
+}
+ POST /clients/new 500 in 1328ms
+ GET /clients/new 200 in 859ms
+ ○ Compiling /clients/[id] ...
+ ✓ Compiled /clients/[id] in 1069ms (887 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1367ms (891 modules)
+ ⨯ [Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- A:\Beautiful_Pain\Projects\Software CRM\.next\server\webpack-runtime.js
+- A:\Beautiful_Pain\Projects\Software CRM\.next\server\app\(app)\clients\[id]\page.js
+- A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\server\require.js
+- A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\server\load-components.js
+- A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\build\utils.js
+- A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\server\dev\static-paths-worker.js
+- A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\compiled\jest-worker\processChild.js] {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/clients/new'
+}
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /_next/static/webpack/0601544160f24d80.webpack.hot-update.json 404 in 1912ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1753ms (1133 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /_next/static/webpack/0601544160f24d80.webpack.hot-update.json 404 in 2652ms
+ GET /clients/new 500 in 10587ms
+ GET /login?code=dccf0492-10dc-409c-be7d-72b8821b2aff 200 in 144ms
+Error: fetch failed
+    at context.fetch (A:\Beautiful_Pain\Projects\Software CRM\node_modules\next\dist\server\web\sandbox\context.js:303:38)
+    at eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/helpers.js:121:25)
+    at _handleRequest (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:122:24)
+    at _request (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:112:24)
+    at eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2512:82)
+    at SupabaseAuthClient._useSession (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2329:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2502:20)
+    at async eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2486:20)
+    at async eval (webpack-internal:///(middleware)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:2274:28) {
+  
+}
+TypeError: fetch failed
+    at async login (src\app\(auth)\actions.ts:30:20)
+  28 |
+  29 |   const supabase = await createClient();
+> 30 |   const { error } = await supabase.auth.signInWithPassword(parsed.data);
+     |                    ^
+  31 |   if (error) return { error: error.message };
+  32 |
+  33 |   revalidatePath("/", "layout"); {
+  [cause]: [Error [ConnectTimeoutError]: Connect Timeout Error (attempted addresses: 172.64.149.246:443, 104.18.38.10:443, timeout: 10000ms)] {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+ POST /login?code=dccf0492-10dc-409c-be7d-72b8821b2aff 200 in 11713ms
+ ✓ Compiled in 2.5s (1137 modules)
+ ✓ Compiled in 691ms (507 modules)
