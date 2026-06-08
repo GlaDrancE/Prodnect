@@ -34,7 +34,12 @@ export async function login(_prev: unknown, formData: FormData) {
   redirect("/dashboard");
 }
 
-export async function signup(_prev: unknown, formData: FormData) {
+type SignupState = { error: string | null; message?: string };
+
+export async function signup(
+  _prev: unknown,
+  formData: FormData,
+): Promise<SignupState> {
   const parsed = signupSchema.safeParse({
     fullName: formData.get("fullName"),
     workspaceName: formData.get("workspaceName"),

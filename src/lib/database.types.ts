@@ -18,6 +18,7 @@ export interface Database {
         };
         Insert: { name: string; owner_id: string };
         Update: { name?: string };
+        Relationships: [];
       };
       profiles: {
         Row: {
@@ -29,6 +30,15 @@ export interface Database {
         };
         Insert: { id: string; full_name?: string | null; workspace_id: string };
         Update: { full_name?: string | null };
+        Relationships: [
+          {
+            foreignKeyName: "profiles_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       clients: {
         Row: {
@@ -54,6 +64,15 @@ export interface Database {
           phone?: string | null;
           notes?: string | null;
         };
+        Relationships: [
+          {
+            foreignKeyName: "clients_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       products: {
         Row: {
@@ -82,6 +101,15 @@ export interface Database {
           default_sell_price?: number;
           billing_period_days?: number;
         };
+        Relationships: [
+          {
+            foreignKeyName: "products_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       subscriptions: {
         Row: {
@@ -122,6 +150,29 @@ export interface Database {
           expiry_date?: string;
           status?: SubscriptionStatus;
         };
+        Relationships: [
+          {
+            foreignKeyName: "subscriptions_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "subscriptions_client_id_fkey";
+            columns: ["client_id"];
+            isOneToOne: false;
+            referencedRelation: "clients";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "subscriptions_product_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       invoices: {
         Row: {
@@ -160,6 +211,22 @@ export interface Database {
           total?: number;
           pdf_url?: string | null;
         };
+        Relationships: [
+          {
+            foreignKeyName: "invoices_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "invoices_client_id_fkey";
+            columns: ["client_id"];
+            isOneToOne: false;
+            referencedRelation: "clients";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       invoice_items: {
         Row: {
@@ -186,6 +253,29 @@ export interface Database {
           quantity?: number;
           unit_price?: number;
         };
+        Relationships: [
+          {
+            foreignKeyName: "invoice_items_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "invoice_items_invoice_id_fkey";
+            columns: ["invoice_id"];
+            isOneToOne: false;
+            referencedRelation: "invoices";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "invoice_items_subscription_id_fkey";
+            columns: ["subscription_id"];
+            isOneToOne: false;
+            referencedRelation: "subscriptions";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       notification_log: {
         Row: {
@@ -210,6 +300,22 @@ export interface Database {
           owner_email_sent?: boolean;
           client_email_sent?: boolean;
         };
+        Relationships: [
+          {
+            foreignKeyName: "notification_log_workspace_id_fkey";
+            columns: ["workspace_id"];
+            isOneToOne: false;
+            referencedRelation: "workspaces";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "notification_log_subscription_id_fkey";
+            columns: ["subscription_id"];
+            isOneToOne: false;
+            referencedRelation: "subscriptions";
+            referencedColumns: ["id"];
+          },
+        ];
       };
     };
     Views: {
@@ -223,6 +329,7 @@ export interface Database {
           profit: number;
           next_expiry: string | null;
         };
+        Relationships: [];
       };
       v_workspace_summary: {
         Row: {
@@ -234,6 +341,7 @@ export interface Database {
           total_revenue: number;
           total_profit: number;
         };
+        Relationships: [];
       };
       v_expiring_subscriptions: {
         Row: {
@@ -249,6 +357,7 @@ export interface Database {
           status: "active" | "expired" | "cancelled";
           bucket: "overdue" | "due_today" | "expiring_soon";
         };
+        Relationships: [];
       };
     };
     Functions: {

@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getWorkspaceId } from "@/lib/workspace";
 
 const clientSchema = z.object({
+
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email").or(z.literal("")).optional(),
   phone: z.string().optional(),
